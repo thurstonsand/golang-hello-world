@@ -19,4 +19,4 @@ run: build
 	bin/$(BINARY)
 
 docker-build:
-	docker build .
+	sudo docker build . --tag=golang-hello-world:latest
