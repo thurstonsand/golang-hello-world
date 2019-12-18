@@ -1,9 +1,5 @@
 name: Build
-on:
-  push:
-    branches: [master]
-    tags: ['**']
-  pull_request:
+on: [push]
 jobs:
   build:
     name: Build
