@@ -19,3 +19,9 @@ jobs:
 
     - name: Go test
       run: make test
+  docker:
+    name: Docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker Build
+        run: docker build . -t golang-hello-world:latest
