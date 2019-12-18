@@ -1,0 +1,26 @@
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  maligned:
+    suggest-new: true
+  unused:
+    check-exported: true
+  unparam:
+    check-exported: true
+  
+linters:
+  enable:
+    - maligned
+    - goimports
+    - gofmt
+    - golint
+    - interfacer
+    - unconvert
+    - unparam
+    - whitespace
+  presets:
+    - bugs
+    - format
+    - style
+    - unused
