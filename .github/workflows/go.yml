@@ -10,18 +10,17 @@ jobs:
       with:
         go-version: 1.13
       id: go
-
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
-
     - name: Go build
       run: make build
-
     - name: Go test
       run: make test
   docker:
     name: Docker
     runs-on: ubuntu-latest
     steps:
+      - name: Check out code
+        uses: actions/checkout@v1
       - name: Docker Build
         run: docker build . -t golang-hello-world:latest
