@@ -1,26 +1,69 @@
 linters-settings:
-  errcheck:
-    check-type-assertions: true
-    check-blank: true
+  golint:
+    min-confidence: 0
   maligned:
     suggest-new: true
-  unused:
-    check-exported: true
-  unparam:
-    check-exported: true
+  dupl:
+    threshold: 100
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+  misspell:
+    locale: US
+  goimports:
+    local-prefixes: github.com/thurstonsand
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+    disabled-checks:
+      - wrapperFunc
+      - dupImport
+      - ifElseChain
+      - octalLiteral
   
 linters:
+  disable-all: true
   enable:
-    - maligned
     - goimports
+    - bodyclose
+    - deadcode
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - funlen
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
     - gofmt
     - golint
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
     - interfacer
+    - lll
+    - misspell
+    - nakedret
+    - scopelint
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
     - unconvert
     - unparam
-    - whitespace
-  presets:
-    - bugs
-    - format
-    - style
     - unused
+    - varcheck
+    - whitespace
+
+  # don't enable:
+  # - gochecknoglobals
+  # - gocognit
+  # - godox
+  # - maligned
+  # - prealloc

@@ -3,6 +3,7 @@ BINARY=hello-world
 all: fmt build test
 
 fmt:
+	goimports -l -w -local github.com/thurstonsand .
 	@go list -m -f '{{.Dir}}' github.com/golangci/golangci-lint 1>/dev/null 2>&1 || go mod download
 	go run $$(go list -m -f '{{.Dir}}' github.com/golangci/golangci-lint)/cmd/golangci-lint/main.go run
 
